@@ -5,12 +5,12 @@
   "homepage": "https://treasureaj.github.io/treasure",
   "type": "module",
   "scripts": {
-    "predeploy": "vite build",
-    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@react-three/fiber": "^9.6.1",

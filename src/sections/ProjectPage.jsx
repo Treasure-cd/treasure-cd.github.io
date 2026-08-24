@@ -30,11 +30,11 @@ export default function ProjectPage() {
         </Link>
 
         {/* screen recording of the project in action goes here */}
-        <div className="w-full aspect-video rounded-2xl border border-ink/15 bg-ink/5 flex items-center justify-center">
+        {/* <div className="w-full aspect-video rounded-2xl border border-ink/15 bg-ink/5 flex items-center justify-center">
           <span className="text-xs uppercase tracking-[0.14em] text-ink-muted/60">
             screen recording coming soon
           </span>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-5">
           <span className="text-xs sm:text-sm uppercase tracking-[0.14em] font-semibold text-accent">

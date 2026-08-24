@@ -1,4 +1,5 @@
 import { Smartphone, Globe, ExternalLink } from "lucide-react";
+import { FaGooglePlay, FaApple } from "react-icons/fa6";
 
 export const PROJECTS = [
   {
@@ -8,16 +9,16 @@ export const PROJECTS = [
     type: "mobile",
     kind: "Contracted work",
     tagline: "Real-time ride-sharing and courier tracking, built under contract.",
-    image: "/treasure/screenshots/kablux-1.jpg",
+    image: "/screenshots/kablux-1.jpg",
     tags: ["React Native", "WebSockets", "Real-time Data", "Geolocation"],
     details: [
-      "I was brought on as a contracted mobile engineer for a ride-sharing and courier startup ahead of their launch. This wasn't a personal project I own the repo for — it's real client work, built to ship.",
-      "My focus was the location and messaging layer: persistent multi-point location tracking for riders, drivers, and couriers, plus bi-directional real-time data streams over WebSockets. The hard part was keeping state in sync during fast-moving updates — a rider's position, a driver's route, an order status — without the client and server drifting apart mid-trip.",
+      "I was brought on as a contracted mobile engineer for a ride-sharing and courier startup ahead of their launch. This wasn't a personal project I own the repo for, I was hired to build it, and it was built to ship.",
+      "My main focus was managing the location and messaging layer: persistent multi-point location tracking for riders, drivers, and couriers, plus bi-directional real-time data streams over WebSockets. The hard part was keeping state in sync during fast-moving updates, a rider's position, a driver's route, an order status without the client and server drifting apart mid-trip.",
       "Kablux has since launched and is live on the App Store and Google Play, actively used by real riders and couriers.",
     ],
     links: [
-      { label: "App Store", url: "#", icon: Smartphone },
-      { label: "Google Play", url: "#", icon: Smartphone },
+      { label: "App Store", url: "https://apps.apple.com/ng/app/kablux-rider/id6759964134", icon: FaApple },
+      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.crashingout.kablux", icon: FaGooglePlay },
     ],
   },
   {
@@ -26,17 +27,16 @@ export const PROJECTS = [
     featured: false,
     type: "web-and-mobile",
     kind: "Product",
-    tagline: "A production e-learning platform — mobile app and companion website.",
-    image: "/treasure/screenshots/lasulearn-3.png", // TODO: web app screenshot for the card
+    tagline: "A production e-learning platform, website and companion mobile app.",
+    image: "/screenshots/lasulearn-3.png", // TODO: web app screenshot for the card
     tags: ["React Native", "Expo", "WebSockets", "Next.js", "Auth"],
     details: [
       'LasuLearn is a production e-learning platform. I built the companion mobile app in Expo/React Native, and also worked on the companion Next.js website.',
       'A lot of the work was on real-time chat: getting WebSocket messaging to actually be reliable meant moving off a state-based "last message" pattern and onto a callback subscription model instead, so messages didn\'t get dropped or duplicated under normal app usage. I also handled the harder edges of mobile UX — keyboard behavior around the chat input, OTP auto-submit and paste handling for sign-in, Google Sign-In, and in-app file sharing.',
-      "Because it's a shipped product with real students using it, I also worked through production concerns like reducing APK size and getting the app through a proper beta checklist before wider release.",
+      "I also worked through production concerns like reducing APK size and getting the app through a proper beta checklist before wider release.",
     ],
     links: [
       { label: "View website", url: "https://lasu-learn.vercel.app", icon: Globe },
-      { label: "View app", url: "#", icon: Smartphone },
     ],
   },
   {
@@ -46,7 +46,7 @@ export const PROJECTS = [
     type: "web",
     kind: "Product",
     tagline: "Solana developer tooling, entirely in the browser.",
-    image: "/treasure/screenshots/chaincall.png",
+    image: "/screenshots/chaincall.png",
     tags: ["Solana", "Web3", "TypeScript", "Dev Tooling"],
     details: [
       "ChainCall is Solana developer tooling for fetching, parsing, and exploring on-chain program IDLs directly from a browser environment — no separate backend service required.",
@@ -62,7 +62,7 @@ export const PROJECTS = [
     type: "web",
     kind: "Product",
     tagline: "A real-time regex compiler and interactive tokenizer.",
-    image: "/treasure/screenshots/regexium.png", // TODO: web screenshot
+    image: "/screenshots/regexium.png", // TODO: web screenshot
     tags: ["Vue 3", "TypeScript", "Tokenization", "Compiler Logic"],
     details: [
       "Regexium is a real-time regular expression compiler, syntax evaluator, and tokenizer. Type an expression and it breaks it down live into an interactive, structured explanation of what each part is actually doing.",
@@ -78,7 +78,7 @@ export const PROJECTS = [
     type: "web",
     kind: "Hackathon project",
     tagline: "An AI skincare and style assistant that adapts to your skin, cycle, and climate.",
-    image: "/treasure/screenshots/glowcycle.png", // TODO: web screenshot
+    image: "/screenshots/glowcycle.png", // TODO: web screenshot
     tags: ["React", "Vite", "Firebase", "YouCam API", "AI"],
     details: [
       "GlowCycle was built for the YouCam API Skin AI & Apparel VTO Hackathon, on a 15-day build timeline. The idea: skincare and style recommendations shouldn't be static — they should adapt to your actual skin, where you are in your cycle, and the climate you're in.",

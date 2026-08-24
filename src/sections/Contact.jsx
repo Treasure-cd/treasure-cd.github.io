@@ -1,9 +1,9 @@
-import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin, FiFileText } from "react-icons/fi";
 
 const CONTACTS = [
   {
     label: "Email",
-    value: "treasureaj14@gmail.com", // TODO: swap in your real email
+    value: "treasureaj14@gmail.com", 
     href: "mailto:treasureaj14@gmail.com",
     Icon: FiMail,
   },
@@ -15,9 +15,16 @@ const CONTACTS = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/treasure-ani-joseph", // TODO: swap in your real handle
+    value: "linkedin.com/in/treasure-ani-joseph", 
     href: "https://www.linkedin.com/in/treasure-ani-joseph-aa25b7373/",
     Icon: FiLinkedin,
+  },
+  {
+    label: "Resume",
+    value: "View PDF", 
+    // Point this to the exact filename you put in the public folder
+    href: "/Treasure_Ani-Joseph_Resume.pdf", 
+    Icon: FiFileText,
   },
 ];
 
