@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #e6f1ff;
+  --color-ink: #030011;
+  --color-ink-muted: #27292e;
+  --color-accent: #001558;
+
+  --font-body: "Atkinson Hyperlegible", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  --font-script: "Caveat", serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+@theme {
+  --animate-wiggle: wiggle 0.2s ease-in-out 3;
+  --animate-fade-in: fade-in 1s ease-out forwards;
+    --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 6s linear infinite;
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }   
+  }
+
+  @keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+}
+
+.mountain-svg {
+  transform-origin: bottom; /* Keeps the bottom aligned */
+}
+
+@media (max-width: 768px) {
+  .mountain-svg {
+    transform: scaleY(0.7); /* Flattens the mountains by 40% */
+  }
+}
