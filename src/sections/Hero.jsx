@@ -58,7 +58,7 @@ export default function Hero() {
               <Link
                 to={`/#${link}`}
                 onClick={() => handleNavClick(link)}
-                className={`uppercase font-semibold text-ink hover:text-[#00215f] transition-all duration-150 ${
+                className={`uppercase font-semibold text-ink hover:text-[#00215f] hover:scale-105 transition-all duration-150 ${
                   clickedLink === link ? "scale-90" : "scale-100"
                 }`}
               >
@@ -95,11 +95,11 @@ export default function Hero() {
           </span>
         </h1>
         <p
-          className="opacity-0 animate-fade-in mt-4 sm:mt-5 max-w-xs sm:max-w-lg text-ink-muted text-[clamp(0.95rem,2vw,1.15rem)] font-regular"
+          className="opacity-0 animate-fade-in mt-2 sm:mt-3 max-w-xs sm:max-w-lg text-ink-muted text-[clamp(0.95rem,2vw,1.15rem)] font-regular"
           style={{ animationDelay: "700ms" }}
         >
-          Frontend-focused fullstack developer building well-architected,
-          clean and responsive interfaces, for web and mobile.
+          Frontend-focused fullstack developer building clean, responsive
+          interfaces and well-architected web and mobile applications.
         </p>
       </main>
     </div>

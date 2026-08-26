@@ -5,6 +5,7 @@ import {
   SiExpress, SiPython, SiTailwindcss
 } from "react-icons/si";
 import { CiDatabase } from "react-icons/ci";
+import { TbBrandMongodb } from "react-icons/tb";
 
 // Grouping the stack adds immediate professional polish
 const STACK_CATEGORIES = [
@@ -36,6 +37,7 @@ const STACK_CATEGORIES = [
       { label: "Express", Icon: SiExpress },
       { label: "SQL", Icon: CiDatabase },
       { label: "Docker", Icon: SiDocker },
+      { label: "MongoDB", Icon: TbBrandMongodb },
     ]
   }
 ];
