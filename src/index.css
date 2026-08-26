@@ -5,7 +5,7 @@
   src: url("./assets/fonts/AtkinsonHyperlegible-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   src: url("./assets/fonts/AtkinsonHyperlegible-Italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   src: url("./assets/fonts/AtkinsonHyperlegible-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   src: url("./assets/fonts/AtkinsonHyperlegible-BoldItalic.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -37,7 +37,7 @@
   src: url("./assets/fonts/Caveat-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -45,7 +45,7 @@
   src: url("./assets/fonts/Caveat-Medium.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -53,7 +53,7 @@
   src: url("./assets/fonts/Caveat-SemiBold.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -61,7 +61,7 @@
   src: url("./assets/fonts/Caveat-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -69,7 +69,7 @@
   src: url("./assets/fonts/Caveat-VariableFont_wght.woff2") format("woff2");
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: block;
 }
 
 @theme {
