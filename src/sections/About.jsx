@@ -32,7 +32,7 @@ export default function About() {
 
         {/* icon cluster — centered, with room to breathe so hover-scaled
             icons at the edge never clip against the column bounds */}
-        <div className="flex items-center justify-center overflow-visible p-6 sm:p-8">
+        <div className="hidden items-center justify-center overflow-visible p-6 sm:p-8 lg:flex">
           <BentoProfile />
         </div>
       </div>
