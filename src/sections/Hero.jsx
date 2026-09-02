@@ -48,7 +48,7 @@ export default function Hero() {
         </Link>
 
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2">
-            {["about", "project", "contacts"].map((link, i) => (
+            {["about", "projects", "contacts"].map((link, i) => (
               <React.Fragment key={link}>
                 {i !== 0 && (
                   <span aria-hidden="true" className="text-accent">

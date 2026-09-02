@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard.jsx";
 export default function ProjectsSection() {
   return (
     <section
-      id="project"
+      id="projects"
       className="w-full bg-background text-ink-muted px-6 sm:px-10 py-20 sm:py-28"
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-10">

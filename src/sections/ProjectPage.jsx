@@ -23,7 +23,7 @@ export default function ProjectPage() {
     <div className="min-h-screen w-full bg-background text-ink-muted px-6 sm:px-10 py-12 sm:py-16">
       <div className="max-w-3xl mx-auto flex flex-col gap-10">
         <Link
-          to="/#project"
+          to="/#projects"
           className="text-xs sm:text-sm uppercase tracking-[0.14em] font-semibold text-accent w-fit"
         >
           ← Back to projects
