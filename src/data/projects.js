@@ -12,10 +12,10 @@ export const PROJECTS = [
     image: "/screenshots/kablux-1.jpg",
     tags: ["React Native", "WebSockets", "Real-time Data", "Geolocation"],
     details: [
-      "I was brought on as a contracted mobile engineer for a ride-sharing and courier startup ahead of their launch. This wasn't a personal project I own the repo for, I was hired to build it, and it was built to ship.",
-      "My main focus was managing the location and messaging layer: persistent multi-point location tracking for riders, drivers, and couriers, plus bi-directional real-time data streams over WebSockets. The hard part was keeping state in sync during fast-moving updates, a rider's position, a driver's route, an order status without the client and server drifting apart mid-trip.",
-      "Kablux has since launched and is live on the App Store and Google Play, actively used by real riders and couriers.",
-    ],
+          "Brought on as a contract mobile engineer to build and ship the client applications for a ride-sharing and courier platform ahead of launch. Focused on delivering production-ready cross-platform performance from Day 1.",
+          "My main focus was managing the location and messaging layer: persistent multi-point location tracking for riders, drivers, and couriers, plus bi-directional real-time data streams over WebSockets. The hard part was keeping state in sync during fast-moving updates, a rider's position, a driver's route, an order status without the client and server drifting apart mid-trip.",
+          "Kablux has since launched and is live on the App Store and Google Play, actively used by real riders and couriers.",
+        ],
     links: [
       { label: "App Store", url: "https://apps.apple.com/ng/app/kablux-rider/id6759964134", icon: FaApple },
       { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.crashingout.kablux", icon: FaGooglePlay },
