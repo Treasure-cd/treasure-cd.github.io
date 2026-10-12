@@ -1,8 +1,11 @@
 import React from "react";
-import IconSphere from "../components/Iconsphere";
+import { lazy, Suspense } from "react";
 import BentoProfile from "../components/BentoProfile";
+import AnimeTip from "../components/AnimeTip"
 
+const AboutScene = lazy(() => import("../components/AboutScene"));
 export default function About() {
+
   return (
     <section
       id="about"
@@ -16,7 +19,7 @@ export default function About() {
 
           <p className="text-[clamp(1rem,2vw,1.15rem)] leading-relaxed">
             I'm Treasure Ani-Joseph, and I'm a third-year Computer Science student at the University of
-            Uyo, Nigeria, and a frontend-focused fullstack developer.
+            Uyo, Nigeria, and a fullstack developer.
             I love building and learning, and the unique combination of creativity, logic, technology
             and never running out of new things to discover, drives my excitement
             and passion for software development.
@@ -26,14 +29,16 @@ export default function About() {
             My engineering philosophy is to adhere to set standards as best as I can, and
             to think for the benefit of the end user. I love building things that solve real
             problems. When I'm not on my computer, I'm usually reading about art history or
-            watching an anime.
+            watching an <AnimeTip>anime</AnimeTip>.
           </p>
         </div>
 
         {/* icon cluster — centered, with room to breathe so hover-scaled
             icons at the edge never clip against the column bounds */}
         <div className="hidden items-center justify-center overflow-visible p-6 sm:p-8 lg:flex">
-          <BentoProfile />
+          <Suspense fallback={null}>
+            <AboutScene />
+          </Suspense>
         </div>
       </div>
     </section>

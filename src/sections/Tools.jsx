@@ -2,10 +2,11 @@ import React from "react";
 import {
   SiReact, SiVuedotjs, SiJavascript, SiTypescript, SiHtml5,
   SiCss, SiNextdotjs, SiNodedotjs, SiDocker, SiThreedotjs,
-  SiExpress, SiPython, SiTailwindcss
+  SiExpress, SiPython, SiTailwindcss, SiFastapi, SiDotnet,
+  SiFastify, SiNestjs
 } from "react-icons/si";
 import { CiDatabase } from "react-icons/ci";
-import { TbBrandMongodb } from "react-icons/tb";
+import { TbBrandMongodb, TbBrandCSharp } from "react-icons/tb";
 
 // Grouping the stack adds immediate professional polish
 const STACK_CATEGORIES = [
@@ -15,6 +16,7 @@ const STACK_CATEGORIES = [
       { label: "JavaScript", Icon: SiJavascript },
       { label: "TypeScript", Icon: SiTypescript },
       { label: "Python", Icon: SiPython },
+      { label: "C#", Icon: TbBrandCSharp },
       { label: "HTML5", Icon: SiHtml5 },
       { label: "CSS3", Icon: SiCss },
     ]
@@ -31,13 +33,22 @@ const STACK_CATEGORIES = [
     ]
   },
   {
-    title: "Backend & Infrastructure",
+    title: "Backend Frameworks",
     items: [
       { label: "Node.js", Icon: SiNodedotjs },
       { label: "Express", Icon: SiExpress },
+      { label: "Fastify", Icon: SiFastify },
+      { label: "NestJS", Icon: SiNestjs },
+      { label: "FastAPI", Icon: SiFastapi },
+      { label: "ASP.NET Core", Icon: SiDotnet },
+    ]
+  },
+  {
+    title: "Data & Infrastructure",
+    items: [
       { label: "SQL", Icon: CiDatabase },
-      { label: "Docker", Icon: SiDocker },
       { label: "MongoDB", Icon: TbBrandMongodb },
+      { label: "Docker", Icon: SiDocker },
     ]
   }
 ];
@@ -64,7 +75,7 @@ export default function Stack() {
               <h3 className="text-sm font-semibold uppercase tracking-wider text-ink/60">
                 {category.title}
               </h3>
-              
+
               {/* The "Brick" Layout using flex-wrap */}
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 {category.items.map(({ label, Icon }) => (

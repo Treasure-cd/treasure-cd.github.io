@@ -26,10 +26,7 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background text-ink-muted">
-      {/* "nav" that doesn't look like a navbar — no bar, no background,
-          no border, just words. Sits at the top and scrolls away with
-          the page for now (easiest default) — say the word if you'd
-          rather it stay pinned. */}
+
           <SectionBackdrop />
        <SkyBackdrop />
       <header className="relative z-10 w-full px-6 sm:px-10 pt-8 sm:pt-10">
