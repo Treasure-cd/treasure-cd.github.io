@@ -1,0 +1,39 @@
+Here's the plan, roughly in order, then what I need from you.
+
+**Structure: reuse the sections, don't copy them.** I'd avoid a `data/` folder of duplicated components. Instead, the existing sections become reusable by taking props, and the `/data` route calls them with different content:
+
+- A new data file next to `projects.js` (say `dataProjects.js`) holds the HELIOS and Concord entries in the same shape as your projects.
+- `Hero`, `Projects`, `Tools` and `About` get small props for the content that differs: role line ("Data Analyst"), tagline, section heading, the list of items, and the tools list (Python, SQL, pandas, Power BI, BigQuery).
+- `ProjectCard` stays as it is. `ProjectPage` looks up its entry by slug, from whichever array the route passes it.
+- `/data` and `/data/:slug` are new routes next to your existing ones. Contact can stay shared.
+- A small wrapper component or layout for each route sets the theme and passes the props, so `App.jsx` only gains a couple of lines.
+
+**Theme colour.** Your tokens are `--color-background`, `--color-ink`, `--color-accent`. Tailwind v4 turns those into CSS variables, so `/data` can override them under a wrapper like `[data-theme="data"]`. Any component that uses `bg-background` or `text-accent` then changes automatically. The catch is that anything with a hard-coded blue (a hex value or `bg-blue-*`) won't follow, and I expect the backdrops to be the main offenders. Keeping it light with one accent, like the rest of your site, I'd suggest:
+
+| Option | Background | Accent | Feel |
+|---|---|---|---|
+| Teal-green | `#e8f6f1` | `#064e3b` | Analytical, calm, clearly different from blue |
+| Warm amber | `#fdf3e1` | `#7c2d12` | Warm and distinctive, reads as "dashboard" |
+| Violet | `#f0ecfb` | `#2e1065` | Closest to your blue, so safest if you want it to feel related |
+
+I'd pick teal-green: it's the strongest contrast with the blue and fits data work. I can tune the exact shades once I see the site.
+
+**Given your deadline,** I'd ship a minimal version first: the theme, the hero, HELIOS and Concord as cards with detail pages, and the tools list. The afforestation piece can be added later as a third card, with no layout changes needed.
+
+**What I need to see:**
+
+1. `src/App.jsx` and `src/main.jsx` (the routing and where the navbar lives)
+2. `vite.config.js`. The `docs/` folder suggests GitHub Pages, and a `/data` URL on GitHub Pages 404s on refresh unless the router or a 404 fallback is set up for it.
+3. `src/sections/Hero.jsx`, `Projects.jsx`, `ProjectPage.jsx` and `Tools.jsx`
+4. `src/components/ProjectCard.jsx`
+5. `src/data/projects.js`, or just the first two entries, so I can match the shape
+6. `SkyBackdrop.jsx` and `SectionBackdrop.jsx`, to see how much blue is hard-coded
+7. `About.jsx`, if the About section should also change for `/data`
+
+**And some content from you,** which can wait until the code is sorted:
+
+- A cover image for each piece (HELIOS's best chart, and the Concord executive dashboard for the dark frame), saved in `public/screenshots/`
+- The final repo links, and the PDF link for the Concord report
+- A one-line tagline and 3-5 tags per piece. I can draft these from what we've written, and you can edit them.
+
+Paste the files and I'll tell you exactly what to change in each one, as small edits rather than rewrites.

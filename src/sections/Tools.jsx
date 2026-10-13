@@ -53,7 +53,11 @@ const STACK_CATEGORIES = [
   }
 ];
 
-export default function Stack() {
+export default function Stack({
+  categories = STACK_CATEGORIES,
+  heading = "My Stack",
+  description = "The tools, frameworks, and languages I use to build scalable web and mobile applications.",
+}) {
   return (
     <section
       id="stack"
@@ -62,15 +66,15 @@ export default function Stack() {
       <div className="max-w-6xl mx-auto flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="font-extrabold text-ink text-[clamp(1.75rem,4vw,2.75rem)]">
-            My Stack
+            {heading}
           </h2>
           <p className="text-[clamp(1rem,1.5vw,1.15rem)] max-w-2xl">
-            The tools, frameworks, and languages I use to build scalable web and mobile applications.
+            {description}
           </p>
         </div>
 
         <div className="flex flex-col gap-10">
-          {STACK_CATEGORIES.map((category) => (
+          {categories.map((category) => (
             <div key={category.title} className="flex flex-col gap-4">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-ink/60">
                 {category.title}

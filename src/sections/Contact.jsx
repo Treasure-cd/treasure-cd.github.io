@@ -1,13 +1,8 @@
 import { FiMail, FiGithub, FiLinkedin, FiFileText } from "react-icons/fi";
 
+const DEFAULT_RESUME_HREF = "/Treasure%20Ani-Joseph%20Resume.pdf";
+
 const CONTACTS = [
-    {
-    label: "Resume",
-    value: "View PDF", 
-    // Point this to the exact filename you put in the public folder
-    href: "/Treasure_Ani-Joseph_Resume.pdf", 
-    Icon: FiFileText,
-  },
   {
     label: "Email",
     value: "treasureaj14@gmail.com", 
@@ -28,7 +23,12 @@ const CONTACTS = [
   },
 ];
 
-export default function Contact() {
+export default function Contact({ resumeHref = DEFAULT_RESUME_HREF }) {
+  const contacts = [
+    { label: "Resume", value: "View PDF", href: resumeHref, Icon: FiFileText },
+    ...CONTACTS,
+  ];
+
   return (
     <section
       id="contacts"
@@ -40,7 +40,7 @@ export default function Contact() {
           </h2>
 
         <div className="flex flex-col divide-y divide-ink/10 border-t border-b border-ink/10">
-          {CONTACTS.map(({ label, value, href, Icon }) => (
+          {contacts.map(({ label, value, href, Icon }) => (
             <a
               key={label}
               href={href}

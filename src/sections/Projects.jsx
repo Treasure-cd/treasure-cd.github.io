@@ -2,7 +2,11 @@ import React from "react";
 import { PROJECTS } from "../data/projects.js"
 import ProjectCard from "../components/ProjectCard.jsx";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({
+  projects = PROJECTS,
+  detailPath = "/projects",
+  heading = "Projects",
+}) {
   return (
     <section
       id="projects"
@@ -10,12 +14,12 @@ export default function ProjectsSection() {
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-10">
           <h2 className="font-extrabold text-ink text-[clamp(1.75rem,4vw,2.75rem)]">
-           Projects
+           {heading}
           </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} detailPath={detailPath} />
           ))}
         </div>
       </div>

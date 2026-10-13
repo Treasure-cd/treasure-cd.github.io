@@ -2,15 +2,15 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { PROJECTS } from "../data/projects.js";
 
-export default function ProjectPage() {
+export default function ProjectPage({ projects = PROJECTS, homePath = "/" }) {
   const { id } = useParams();
-  const project = PROJECTS.find((p) => p.id === id);
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     return (
       <div className="min-h-screen w-full bg-background text-ink-muted flex flex-col items-center justify-center gap-4 px-6 text-center">
         <p className="text-ink font-semibold">Couldn't find that project.</p>
-        <Link to="/" className="text-sm text-accent font-semibold">
+        <Link to={homePath} className="text-sm text-accent font-semibold">
           ← Back home
         </Link>
       </div>
@@ -23,7 +23,7 @@ export default function ProjectPage() {
     <div className="min-h-screen w-full bg-background text-ink-muted px-6 sm:px-10 py-12 sm:py-16">
       <div className="max-w-3xl mx-auto flex flex-col gap-10">
         <Link
-          to="/#projects"
+          to={`${homePath}#projects`}
           className="text-xs sm:text-sm uppercase tracking-[0.14em] font-semibold text-accent w-fit"
         >
           ← Back to projects

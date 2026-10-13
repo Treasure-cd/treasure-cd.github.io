@@ -4,7 +4,7 @@ import SectionBackdrop from "../components/SectionBackdrop";
 import { Squiggle, Star, Loop } from "../components/Doodles"
 import SkyBackdrop from "../components/SkyBackdrop";
 
-const colorWord = [
+const DEFAULT_COLOR_WORD = [
   { letter: "T", color: "#7DD3FC" },
   { letter: "r", color: "#38BDF8" },
   { letter: "e", color: "#0EA5E9" },
@@ -15,7 +15,16 @@ const colorWord = [
   { letter: "e", color: "#312E81" },
 ];
 
-export default function Hero() {
+const DEFAULT_TAGLINE =
+  "Frontend-focused fullstack developer building clean, responsive interfaces and well-architected web and mobile applications.";
+
+export default function Hero({
+  role,
+  tagline = DEFAULT_TAGLINE,
+  colorWord = DEFAULT_COLOR_WORD,
+  homePath = "/",
+  switchLink,
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const [clickedLink, setClickedLink] = useState(null);
 
@@ -23,6 +32,12 @@ export default function Hero() {
   setClickedLink(key);
   setTimeout(() => setClickedLink(null), 200);
 };
+
+  const navLinks = ["about", "projects", "contacts"].map((label) => ({
+    label,
+    to: `${homePath}#${label}`,
+  }));
+  if (switchLink) navLinks.push(switchLink);
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background text-ink-muted">
@@ -35,7 +50,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-4 sm:gap-y-0 text-xs sm:text-sm tracking-[0.14em]"
         >
         <Link
-          to="/"
+          to={homePath}
           onClick={() => handleNavClick("name")}
           className={`font-script text-2xl sm:text-3xl text-ink hover:opacity-60 transition-all duration-150 self-center sm:self-auto hover:animate-wiggle ${
             clickedLink === "name" ? "scale-90" : "scale-100"
@@ -45,7 +60,7 @@ export default function Hero() {
         </Link>
 
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2">
-            {["about", "projects", "contacts"].map((link, i) => (
+            {navLinks.map((link, i) => (
               <React.Fragment key={link}>
                 {i !== 0 && (
                   <span aria-hidden="true" className="text-accent">
@@ -53,13 +68,13 @@ export default function Hero() {
                   </span>
                 )}
               <Link
-                to={`/#${link}`}
-                onClick={() => handleNavClick(link)}
-                className={`uppercase font-semibold text-ink hover:text-[#00215f] hover:scale-105 transition-all duration-150 ${
-                  clickedLink === link ? "scale-90" : "scale-100"
+                to={link.to}
+                onClick={() => handleNavClick(link.label)}
+                className={`uppercase font-semibold text-ink hover:text-accent hover:scale-105 transition-all duration-150 ${
+                  clickedLink === link.label ? "scale-90" : "scale-100"
                 }`}
               >
-                {link}
+                {link.label}
               </Link>
               </React.Fragment>
             ))}
@@ -69,6 +84,11 @@ export default function Hero() {
 
       {/* Hero content */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-16 sm:py-0 text-center">
+        {role && (
+          <span className="opacity-0 animate-fade-in mb-3 text-xs sm:text-sm uppercase tracking-[0.14em] font-semibold text-accent">
+            {role}
+          </span>
+        )}
         <h1 className="opacity-0 animate-fade-in font-extrabold leading-tight text-ink text-[clamp(2.75rem,8vw,6.5rem)]">
           Hi, I'm{" "}
           <span
@@ -95,8 +115,7 @@ export default function Hero() {
           className="opacity-0 animate-fade-in mt-2 sm:mt-3 max-w-xs sm:max-w-lg text-ink-muted text-[clamp(0.95rem,2vw,1.15rem)] font-regular"
           style={{ animationDelay: "700ms" }}
         >
-          Frontend-focused fullstack developer building clean, responsive
-          interfaces and well-architected web and mobile applications.
+          {tagline}
         </p>
       </main>
     </div>

@@ -122,3 +122,14 @@ body {
     transform: scaleY(0.7); /* Flattens the mountains by 40% */
   }
 }
+
+/* /data route theme: Tailwind utilities read these variables, so overriding
+   them on a wrapper re-themes every section inside it. */
+[data-theme="data"] {
+  --color-background: #e8f6f1;
+  --color-ink: #03110d;
+  --color-ink-muted: #1f2e29;
+  --color-accent: #064e3b;
+  --color-sky-cloud: #b9e3d4;
+  --color-sky-mountain: #7fc4a8;
+}

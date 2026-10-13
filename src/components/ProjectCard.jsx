@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, detailPath = "/projects" }) {
   const { id, name, tagline, tags, liveLink, type, image, darkFrame } = project;
   const isMobileOnly = type === "mobile";
   const dark = darkFrame ?? isMobileOnly;
@@ -63,7 +63,7 @@ export default function ProjectCard({ project }) {
             </a>
           )}
           <Link
-            to={`/projects/${id}`}
+            to={`${detailPath}/${id}`}
             className="text-sm font-semibold text-background bg-ink rounded-full px-5 py-2 hover:opacity-85 transition-opacity"
           >
             See more
