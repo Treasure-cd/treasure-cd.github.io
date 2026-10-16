@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SectionBackdrop from "../components/SectionBackdrop";
 import { Squiggle, Star, Loop } from "../components/Doodles"
 import SkyBackdrop from "../components/SkyBackdrop";
+import Reveal from "../components/Reveal";
 
 const DEFAULT_COLOR_WORD = [
   { letter: "T", color: "#7DD3FC" },
@@ -47,23 +48,25 @@ export default function Hero({
       <header className="relative z-10 w-full px-6 sm:px-10 pt-8 sm:pt-10">
         <nav
           aria-label="Main"
-          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-4 sm:gap-y-0 text-xs sm:text-sm tracking-[0.14em]"
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-2 sm:gap-y-0 text-xs sm:text-sm tracking-[0.14em]"
         >
-        <Link
-          to={homePath}
-          onClick={() => handleNavClick("name")}
-          className={`font-script text-2xl sm:text-3xl text-ink hover:opacity-60 transition-all duration-150 self-center sm:self-auto hover:animate-wiggle ${
-            clickedLink === "name" ? "scale-90" : "scale-100"
-          }`}
-        >
-          Treasure Ani-Joseph
-        </Link>
+        <Reveal className="self-center sm:self-auto">
+          <Link
+            to={homePath}
+            onClick={() => handleNavClick("name")}
+            className={`font-script text-2xl sm:text-3xl text-ink hover:opacity-60 transition-all duration-150 hover:animate-wiggle ${
+              clickedLink === "name" ? "scale-90" : "scale-100"
+            }`}
+          >
+            Treasure Ani-Joseph
+          </Link>
+        </Reveal>
 
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2">
             {navLinks.map((link, i) => (
-              <React.Fragment key={link}>
+              <React.Fragment key={link.label}>
                 {i !== 0 && (
-                  <span aria-hidden="true" className="text-accent">
+                  <span aria-hidden="true" className="hidden sm:inline text-accent">
                     ·
                   </span>
                 )}
@@ -85,38 +88,44 @@ export default function Hero({
       {/* Hero content */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-16 sm:py-0 text-center">
         {role && (
-          <span className="opacity-0 animate-fade-in mb-3 text-xs sm:text-sm uppercase tracking-[0.14em] font-semibold text-accent">
-            {role}
-          </span>
+          <Reveal className="mb-3">
+            <span className="text-xs sm:text-sm uppercase tracking-[0.14em] font-semibold text-accent">
+              {role}
+            </span>
+          </Reveal>
         )}
-        <h1 className="opacity-0 animate-fade-in font-extrabold leading-tight text-ink text-[clamp(2.75rem,8vw,6.5rem)]">
+        <Reveal className="inline-block whitespace-nowrap">
+        <h1 className="font-extrabold leading-tight text-ink text-[clamp(2.75rem,8vw,6.5rem)]">
           Hi, I'm{" "}
-          <span
-            className="text-ink cursor-default"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {colorWord.map((single, i) => (
-              <span
-                key={i}
-                className="inline-block transition-all duration-300 ease-out"
-                style={{
-                  color: isHovered ? single.color : "inherit",
-                  transform: isHovered ? "translateY(-12px)" : "translateY(0)",
-                  transitionDelay: `${i * 40}ms`,
-                }}
-              >
-                {single.letter}
-              </span>
-            ))}
-          </span>
-        </h1>
-        <p
-          className="opacity-0 animate-fade-in mt-2 sm:mt-3 max-w-xs sm:max-w-lg text-ink-muted text-[clamp(0.95rem,2vw,1.15rem)] font-regular"
-          style={{ animationDelay: "700ms" }}
-        >
-          {tagline}
-        </p>
+
+            <span
+              className="text-ink cursor-default inline-block"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={() => setIsHovered((h) => !h)}
+            >
+              {colorWord.map((single, i) => (
+                <span
+                  key={i}
+                  className="inline-block transition-all duration-300 ease-out"
+                  style={{
+                    color: isHovered ? single.color : "inherit",
+                    transform: isHovered ? "translateY(-12px)" : "translateY(0)",
+                    transitionDelay: `${i * 40}ms`,
+                  }}
+                >
+                  {single.letter}
+                </span>
+              ))}
+            </span>
+
+          </h1>
+          </Reveal>
+        <Reveal delay={150} className="mt-2 sm:mt-3">
+          <p className="max-w-xs sm:max-w-lg text-ink-muted text-[clamp(0.95rem,2vw,1.15rem)] font-regular">
+            {tagline}
+          </p>
+        </Reveal>
       </main>
     </div>
   );

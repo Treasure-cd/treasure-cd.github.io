@@ -1,35 +1,35 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("./assets/fonts/AtkinsonHyperlegible-Regular.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_24pt-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("./assets/fonts/AtkinsonHyperlegible-Italic.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_24pt-Italic.ttf") format("truetype");
   font-style: italic;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("./assets/fonts/AtkinsonHyperlegible-Bold.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_24pt-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("./assets/fonts/AtkinsonHyperlegible-BoldItalic.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_24pt-BoldItalic.ttf") format("truetype");
   font-style: italic;
   font-weight: 700;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -78,7 +78,7 @@
   --color-ink-muted: #27292e;
   --color-accent: #001558;
 
-  --font-body: "Geist", "Gill Sans MT", Calibri,
+  --font-body: "Inter", "Gill Sans MT", Calibri,
     "Trebuchet MS", sans-serif;
   --font-script: "Caveat", serif;
 }
@@ -90,8 +90,9 @@ body {
 @theme {
   --animate-wiggle: wiggle 0.2s ease-in-out 3;
   --animate-fade-in: fade-in 1s ease-out forwards;
-    --animate-float: float 6s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
   --animate-spin-slow: spin-slow 6s linear infinite;
+  --animate-rise-in: rise-in 1s ease-out both;
 
   @keyframes wiggle {
     0%, 100% { transform: rotate(-3deg); }
@@ -100,7 +101,7 @@ body {
 
   @keyframes fade-in {
     0% { opacity: 0; }
-    100% { opacity: 1; }   
+    100% { opacity: 1; }
   }
 
   @keyframes float {
@@ -110,6 +111,11 @@ body {
 
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
+}
+
+@keyframes rise-in {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 }
 

@@ -7,7 +7,7 @@ export default function ProjectCard({ project, detailPath = "/projects" }) {
   const dark = darkFrame ?? isMobileOnly;
 
   return (
-    <div className="flex flex-col rounded-3xl border border-ink/15 overflow-hidden bg-background">
+    <div className="flex h-full flex-col rounded-3xl border border-ink/15 overflow-hidden bg-background">
       {/* picture — same landscape frame for every card so rows line up;
           a mobile-only project's screenshot just sits centered/contained
           inside it instead of filling edge to edge */}

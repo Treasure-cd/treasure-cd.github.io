@@ -7,6 +7,7 @@ import {
 } from "react-icons/si";
 import { CiDatabase } from "react-icons/ci";
 import { TbBrandMongodb, TbBrandCSharp } from "react-icons/tb";
+import Reveal from "../components/Reveal";
 
 // Grouping the stack adds immediate professional polish
 const STACK_CATEGORIES = [
@@ -65,36 +66,42 @@ export default function Stack({
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-12">
         <div className="flex flex-col gap-4">
-          <h2 className="font-extrabold text-ink text-[clamp(1.75rem,4vw,2.75rem)]">
-            {heading}
-          </h2>
-          <p className="text-[clamp(1rem,1.5vw,1.15rem)] max-w-2xl">
-            {description}
-          </p>
+          <Reveal>
+            <h2 className="font-extrabold text-ink text-[clamp(1.75rem,4vw,2.75rem)]">
+              {heading}
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-[clamp(1rem,1.5vw,1.15rem)] max-w-2xl">
+              {description}
+            </p>
+          </Reveal>
         </div>
 
         <div className="flex flex-col gap-10">
-          {categories.map((category) => (
-            <div key={category.title} className="flex flex-col gap-4">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-ink/60">
-                {category.title}
-              </h3>
+          {categories.map((category, index) => (
+            <Reveal key={category.title} delay={index * 100}>
+              <div className="flex flex-col gap-4">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-ink/60">
+                  {category.title}
+                </h3>
 
-              {/* The "Brick" Layout using flex-wrap */}
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                {category.items.map(({ label, Icon }) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-ink/10 bg-ink/5 dark:bg-white/5 hover:border-ink/30 hover:bg-ink/10 transition-colors cursor-default"
-                  >
-                    <Icon className="text-ink" size={18} />
-                    <span className="font-medium text-ink text-sm">
-                      {label}
-                    </span>
-                  </div>
-                ))}
+                {/* The "Brick" Layout using flex-wrap */}
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  {category.items.map(({ label, Icon }) => (
+                    <div
+                      key={label}
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-ink/10 bg-ink/5 dark:bg-white/5 hover:border-ink/30 hover:bg-ink/10 transition-colors cursor-default"
+                    >
+                      <Icon className="text-ink" size={18} />
+                      <span className="font-medium text-ink text-sm">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

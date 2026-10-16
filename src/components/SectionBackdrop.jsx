@@ -1,9 +1,5 @@
 import React from "react";
 
-// Sits behind a section's content. The circle+square is the "ghost"
-// anchor shape for now — extremely faint, oversized, slightly rotated.
-// Later, the tilted micro-SVGs (the gimmick) get dropped in here as
-// children, sharing this same absolutely-positioned layer.
 export default function SectionBackdrop({ children }) {
   return (
     <div
