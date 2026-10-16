@@ -28,7 +28,7 @@ export const PROJECTS = [
     type: "web-and-mobile",
     kind: "Product",
     tagline: "A production e-learning platform, website and companion mobile app.",
-    image: "/screenshots/lasulearn-3.png", // TODO: web app screenshot for the card
+    image: "/screenshots/lasulearn-3.png",
     tags: ["React Native", "Expo", "WebSockets", "Next.js", "Auth"],
     details: [
       'LasuLearn is a production e-learning platform. I built the companion mobile app in Expo/React Native, and also worked on the companion Next.js website.',
@@ -67,24 +67,24 @@ export const PROJECTS = [
     details: [
       "Regexium is a real-time regular expression compiler, syntax evaluator, and tokenizer. Type an expression and it breaks it down live into an interactive, structured explanation of what each part is actually doing.",
       "It strips expressions down on the fly without leaning on external parsing libraries or abstractions — the tokenization and breakdown logic is handled directly, which was as much a way to properly learn how regex engines and simple compilers work as it was to build a useful tool.",
-      "Built in Vue 3 and TypeScript, with a focus on the UI state staying responsive as you type rather than debouncing everything into a laggy preview.",
+      "I built it in Vue 3 and TypeScript, with a focus on the UI state staying responsive as you type rather than debouncing everything into a laggy preview.",
     ],
     links: [{ label: "View project", url: "https://regexium.onrender.com", icon: ExternalLink }],
   },
   {
-    id: "glowcycle",
-    name: "GlowCycle",
+    id: "stride",
+    name: "Stride",
     featured: false,
     type: "web",
-    kind: "Hackathon project",
-    tagline: "An AI skincare and style assistant that adapts to your skin, cycle, and climate.",
-    image: "/screenshots/glowcycle.png", // TODO: web screenshot
-    tags: ["React", "Vite", "Firebase", "YouCam API", "AI"],
+    kind: "Personal Project",
+    tagline: "A study companion built for neurodivergent and dyslexic students.",
+    image: "/screenshots/stride-1.png",
+    tags: ["React", "Firebase", "MongoDB", "Mongoose", "Cloudinary", "Accessibility"],
     details: [
-      "GlowCycle was built for the YouCam API Skin AI & Apparel VTO Hackathon, on a 15-day build timeline. The idea: skincare and style recommendations shouldn't be static — they should adapt to your actual skin, where you are in your cycle, and the climate you're in.",
-      "It's built on YouCam's Skin AI for the actual skin analysis, layered with cycle-aware and climate-aware logic to shift recommendations day to day, plus an AM/PM routine builder and product suggestions.",
-      "Beyond the core analysis, it also covers color analysis and style guidance, with a journal for tracking progress over time. Frontend is React + Vite with Tailwind, backed by Firebase for auth and data.",
+      "Stride is a study app designed around how neurodivergent and dyslexic students actually learn, rather than adapting a generic planner after the fact. Accessibility is the starting point of the design, not a settings page added at the end.",
+      "On the backend, Firebase handles authentication only, and MongoDB (via Mongoose) holds the app data: user profiles, courses, schedules, and mood logs are modelled as separate collections so each can grow independently. Avatars are stored on Cloudinary and referenced from the user's profile.",
+      "I'm working on more intelligent ML to learn from a student's plans, and study sprints for \"just in case\" deadlines.",
     ],
-    links: [{ label: "View project", url: "#", icon: ExternalLink }],
+    links: [{ label: "View project", url: "https://try-stride.netlify.app", icon: ExternalLink }],
   },
 ];
